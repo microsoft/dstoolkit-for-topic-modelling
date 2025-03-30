@@ -1,0 +1,4 @@
+{"dataset_name": "Cohere/movies", "alpha": 0.1, "eta": 0.01, "n_topics": 5, "n_iters": 10000, "run_id": 1}
+{"dataset_name": "Cohere/movies", "alpha": 0.1, "eta": 0.01, "n_topics": 10, "n_iters": 10000, "run_id": 2}
+{"dataset_name": "Cohere/movies", "alpha": 0.1, "eta": 0.01, "n_topics": 20, "n_iters": 10000, "run_id": 3}
+{"dataset_name": "Cohere/movies", "alpha": 0.1, "eta": 0.01, "n_topics": 40, "n_iters": 10000, "run_id": 4}

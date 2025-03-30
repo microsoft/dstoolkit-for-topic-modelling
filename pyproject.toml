@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "topicanalyser"
+version = "0.1.0"
+description = ""
+authors = ["Mariflor Dunne-Vega and Natalia Glazyrina"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pre-commit = "^4.0.1"
+lda = "^3.0.2"
+pyarrow = "^18.1.0"
+datasets = "^3.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

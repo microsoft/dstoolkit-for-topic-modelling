@@ -1,14 +1,101 @@
-# Project
+# TopicAnalyser
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository provides tools for topic modeling and topic extraction using Latent Dirichlet Allocation (LDA). The project includes notebooks and scripts to preprocess data, train models, and analyze topics.
 
-As the maintainer of this project, please make a few updates:
+## Table of Contents
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Notebooks](#notebooks)
+  - [Scripts](#scripts)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+TopicAnalyser is designed to help you understand the underlying topics in a large collection of documents. This can be useful for content recommendation, document classification, trend analysis, and more.
+
+## Installation
+
+To get started, clone the repository and install the dependencies using Poetry:
+
+```bash
+git clone https://github.com/yourusername/TopicAnalyser.git
+cd TopicAnalyser
+poetry install
+```
+
+Make sure you have Python 3.11 installed.
+
+## Usage
+
+### Notebooks
+
+The repository includes several Jupyter notebooks for different stages of topic modeling:
+1. **01_data_preparation.ipynb**: Load and prepare text data for topic modeling.
+2. **02_topic_modelling.ipynb**: Preprocess data and train an LDA model.
+3. **03_check_convergence.ipynb**: Evaluate model convergence using loglikelihood.
+4. **04_coherence_evaluation.ipynb**: Evaluate topic coherence.
+5. **05_topic_analyser.ipynb**: Analyze topics, visualize top words, and interpret topics.
+
+### Scripts
+
+Additionally, you can run multiple models using the `topic_modeller.py` script as mentioned in the `model_training` notebook. This allows for batch processing of different configurations and datasets. Use the following command to run the script with a specific configuration file:
+
+```bash
+python src/topic_modeller.py -c configs/model_configs.jsonl     
+```
+
+All models will be saved in the `/models` folder.
+
+## Configuration
+
+Configuration files (`model_configs.jsonl`) are used to set parameters for the scripts. Each configuration file should contain a list of JSON objects, where each object specifies the parameters for a single model run. The `dataset_type` parameter should be either "HF" (Hugging Face) or "Local". The `dataset_name` parameter should be a dataset name from Hugging Face Datasets or a local file name.
+
+Example configuration:
+
+```json
+[
+    {
+        "dataset_type": "HF",
+        "dataset_name": "cohere/movies",
+        "n_topics": 10,
+        "alpha": 0.1,
+        "eta": 0.01,
+        "run_id":1
+    },
+    {
+        "dataset_type": "Local",
+        "dataset_name": "data/my_local_dataset.csv",
+        "n_topics": 15,
+        "alpha": 0.2,
+        "eta": 0.02,
+        "run_id":2
+    }
+]
+```
+
+### OpenAI Integration
+
+For topic analysis with OpenAI models, you need to set up your Azure OpenAI credentials. Copy the `.env_template` file to `.env` and fill in the required variables with your Azure OpenAI details:
+
+```bash
+cp .env_template .env
+```
+
+Edit the `.env` file to include your Azure OpenAI credentials.
+
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
 
 ## Contributing
 
