@@ -10,7 +10,7 @@ api_key = os.getenv("azure_open_api_key")
 api_version = os.getenv("azure_open_api_version")
 azure_endpoint = os.getenv("azure_open_api_endpoint")
 embedding_deployment = os.getenv("embedding_deployment")
-chat_completition_deployment = os.getenv("chat_completition_deployment")
+chat_completion_deployment = os.getenv("chat_completion_deployment")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -50,7 +50,7 @@ def interpret_topic_with_openai(topic_top_words, topic_top_docs=None):
     "topic_description": A detailed explanation of the topic, incorporating the meaning of the keywords and relevant insights from the example documents.
     """
 
-    response=client.chat.completions.create(model=chat_completition_deployment, 
+    response=client.chat.completions.create(model=chat_completion_deployment, 
                             messages=[{"role":"system", "content": system_prompt},
                                         {"role":"user","content":user_prompt}], 
                             temperature=0.0,

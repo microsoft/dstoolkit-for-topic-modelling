@@ -27,7 +27,7 @@ cd TopicAnalyser
 poetry install
 ```
 
-Make sure you have Python 3.11 installed.
+Make sure you have Python 3.11 installed. Activate the virtual enviroment.
 
 ## Usage
 
