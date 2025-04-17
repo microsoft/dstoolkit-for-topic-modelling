@@ -5,6 +5,8 @@
 
 .env
 .DS_Store
+./models
+*.pkl
 
 # User-specific files
 *.rsuser

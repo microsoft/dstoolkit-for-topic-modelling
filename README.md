@@ -1,6 +1,6 @@
 # TopicAnalyser
 
-This repository provides tools for topic modeling and topic extraction using Latent Dirichlet Allocation (LDA). The project includes notebooks and scripts to preprocess data, train models, and analyze topics.
+This repository provides tools for topic modeling and topic extraction using [Latent Dirichlet Allocation](https://www.pnas.org/doi/10.1073/pnas.0307752101) (LDA). The project includes notebooks and scripts to preprocess data, train models, and analyze topics.
 
 ## Table of Contents
 
